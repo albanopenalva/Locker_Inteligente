@@ -1,0 +1,64 @@
+syntax = "proto3";
+
+package locker;
+
+service LOCKER{
+    // Opens locker door
+    rpc OpenDoor(door) returns (success) {};
+    // Checks if all locker doors are closed
+    rpc IsDoorClosed(door) returns (door_closed) {};
+    // Activate/Deactivate locker's outlets
+    rpc SetOutlet(outlet) returns (success) {};
+    // Send locker power consumption by day 
+    rpc GetPower(dates) returns (stream consumption) {};
+    // Measure locker power consumption
+    rpc GetID(empty) returns (card) {};
+    // Play a sound for locker interface
+    rpc PlaySound(sound) returns (success) {};
+}
+
+message success{
+    bool success = 1;
+}
+
+message id{
+    int64 id = 1;
+}
+
+message door{
+    int32 number = 1;
+}
+
+message door_closed{
+    bool closed = 1;
+}
+
+message empty{
+}
+
+message outlet{
+    int32 number = 1;
+    bool activated = 2;
+}
+
+message consumption{
+    string date = 1;
+    float power = 2;
+}
+
+message card{
+    int64 id = 1;
+    string text = 2;
+    bool detected = 3;
+}
+
+message sound{
+    bool on = 1;
+    int32 sound = 2;
+    bool loop = 3;
+}
+
+message dates{
+    string init_datetime = 1;
+    string end_datetime = 2;
+}

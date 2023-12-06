@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+package users;
+
+service USERS{
+    // Search for an user by his RFID card
+    // Returns: 
+    //          - status: true: card id exists in DB, false: it doesn't
+    //          - name: Null: user not registered, else: name
+    //          - lastname: Null: user not registered, else: lastname
+    //          - profile: Null: or "user" normal user, "admin": administrator
+    rpc GetUser(id) returns (userData) {};
+
+    // Register RFID card in DB
+    rpc RegCard(id) returns (success) {};
+
+    // Register user in DB
+    rpc RegUser(userData) returns (success) {};
+
+    // Change user profile
+    rpc ChangeProfile(userData) returns (success) {};
+
+    // Delete user from DB, but not RFID card
+    rpc DeleteUser(userData) returns (success) {};
+
+    // Delete card from DB and the asociated user
+    rpc DeleteCard(userData) returns (success) {};
+}
+
+message id{
+    int64 id = 1;
+}
+
+message userData{
+    int64 id = 1;
+    string file = 2;
+    bool status = 3;
+    string name = 4;
+    string lastname = 5;
+    string email = 6;
+    string profile = 7;
+}
+
+message success{
+    bool success = 1;
+}

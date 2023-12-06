@@ -1,0 +1,296 @@
+/* ----------------------------------------------
+Custom animations
+---------------------------------------------- */
+
+/* Locker faling in */
+
+@keyframes bouncetop {
+  0% {
+    transform: translateY(-450px);
+    animation-timing-function:ease-in;
+  }
+
+  24% {
+    opacity: 1;
+  }
+
+  25% {
+    transform: translateY(0);
+    animation-timing-function:ease-out;
+  }
+
+  40% {
+    transform: translateY(-100px) rotate(-3deg);
+    animation-timing-function:ease-in;
+  }
+
+  55% {
+    transform: translateY(0) rotate(0deg);
+    animation-timing-function:ease-out;
+  }
+
+  65% {
+    transform: translateY(-50px) rotate(2deg);
+    animation-timing-function:ease-in;
+  }
+
+  75% {
+    transform: translateY(0) rotate(0deg);
+    animation-timing-function:ease-out;
+  }
+
+  82% {
+    transform: translateY(-25px);
+    animation-timing-function:ease-in;
+  }
+
+  87% {
+    transform: translateY(0);
+    animation-timing-function:ease-out;
+  }
+
+  93% {
+    transform: translateY(-6px);
+    animation-timing-function:ease-in;
+  }
+
+  100% {
+    transform: translateY(0);
+    animation-timing-function:ease-out;
+  }
+}
+  
+.animate-bouncetop {
+  animation: bouncetop 1s linear;
+}
+
+/* Falling jello */
+
+@keyframes fallingjello {
+  0% {
+    transform: translateY(-450px) scale3d(1,1,1);
+    animation-timing-function:ease-in;
+    
+  }
+  25%{
+    transform: translateY(0) scale3d(1,1,1);
+    animation-timing-function:ease-out;
+  }
+  40%{
+    transform:scale3d(1.25,.75,1)
+  }
+  50%{
+    transform:scale3d(.75,1.25,1)
+  }
+  60%{
+    transform:scale3d(1.15,.85,1)
+  }
+  70%{
+    transform:scale3d(.95,1.05,1)
+  }
+  80%{
+    transform:scale3d(1.05,.95,1)
+  }
+  100%{
+    transform:scale3d(1,1,1)
+  }
+}
+
+.animate-fallingjello {
+  animation: fallingjello 1s linear;
+}
+
+/* Bouncing in left */
+
+@keyframes bounceleft {
+  0% {
+    transform: translateX(-200px) translateY(-200px);
+    animation-timing-function:ease-in;
+  }
+
+  24% {
+    opacity: 1;
+  }
+
+  25% {
+    transform: translateX(-150px) translateY(0);
+    animation-timing-function:ease-out;
+  }
+
+  40% {
+    transform: translateX(-120px) translateY(-70px);
+    animation-timing-function:ease-in;
+  }
+
+  55% {
+    transform: translateX(-90px) translateY(0);
+    animation-timing-function:ease-out;
+  }
+
+  65% {
+    transform: translateX(-70px) translateY(-50px);
+    animation-timing-function:ease-in;
+  }
+
+  75% {
+    transform: translateX(-50px) translateY(0);
+    animation-timing-function:ease-out;
+  }
+
+  82% {
+    transform: translateX(-36px) translateY(-25px);
+    animation-timing-function:ease-in;
+  }
+
+  87% {
+    transform: translateX(-26px) translateY(0);
+    animation-timing-function:ease-out;
+  }
+
+  93% {
+    transform: translateX(-14px) translateY(-6px);
+    animation-timing-function:ease-in;
+  }
+
+  100% {
+    transform: translateX(0) translateY(0);
+    animation-timing-function:ease-out;
+  }
+}
+
+.animate-bounceleft {
+  animation: bounceleft 1s linear;
+}
+
+/* Alerts rotation */
+
+.rotate-horizontal-center{
+  animation: rotate-horizontal-center 0.4s linear
+} 
+
+@keyframes rotate-horizontal-center{
+  0%{
+    transform:rotateX(0)
+  }
+  30%{
+    transform:rotateX(-360deg)
+  }
+  100%{
+    transform:rotateX(-720deg)
+  }
+}
+
+/* Alerts rotation */
+.rotate-horizontal-center-cont{
+  animation: rotate-horizontal-center-cont 2s linear infinite
+} 
+
+@keyframes rotate-horizontal-center-cont{
+  0%{
+    transform:rotateX(0)
+  }
+  6%{
+    transform:rotateX(-360deg)
+  }
+  20%{
+    transform:rotateX(-720deg)
+  }
+  100%{
+    transform:rotateX(-720deg)
+  }
+}
+
+/* Door open */
+
+.animate-door-open{
+    animation:swing-left 0.4s linear both
+} 
+
+@keyframes swing-left{
+    0%{
+        transform:rotateY(0);
+        transform-origin:left bottom
+    }
+    100%{
+        transform:rotateY(-180deg);
+        transform-origin:left bottom;
+        opacity: 0;
+    }
+}
+
+/* Shake left right */
+
+.shake-left-right{
+  animation:shake-left-right 0.8s linear both
+} 
+
+@keyframes shake-left-right{
+  0%,100%{
+    transform:rotate(0deg);
+    transform-origin:50% 50%
+  }
+  10%{
+    transform:rotate(5deg)
+  }
+  20%,40%,60%{
+    transform:rotate(-8deg)
+  }
+  30%,50%,70%{
+    transform:rotate(8deg)
+  }
+  80%{
+    transform:rotate(-5deg)
+  }
+  90%{
+    transform:rotate(3deg)
+  }
+}
+
+/* Slide out */
+
+.slide-down{
+  animation:slide-down 1s linear both
+}
+
+@keyframes slide-down{
+  0%,60%{
+    transform:translateY(0);
+    opacity: 1;
+  }
+  100%{
+    transform:translateY(450px);
+    opacity: 0;
+  }
+}
+
+/* Loader */
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 8px solid #FFF;
+  border-bottom-color: #cb28ff;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+} 
+
+/* Chart bars */
+.animations-bars {
+  transform-origin: bottom;
+  animation: revealing-bars 4s linear;
+}
+@keyframes revealing-bars {
+  0%  { transform: scaleY( 0 ); }
+  15% { transform: scaleY( 1 ); }
+}
+  

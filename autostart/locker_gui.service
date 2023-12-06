@@ -1,0 +1,15 @@
+[Unit]
+Description=Locker GUI Service
+After=graphical.target locker.service locker_users.service locker_turns.service
+
+[Service]
+Type=idle
+User=penia
+WorkingDirectory=/home/penia/app
+ExecStart=/usr/bin/npm start
+Restart=always
+RestartSec=1
+KillSignal=SIGINT
+
+[Install]
+WantedBy=graphical.target

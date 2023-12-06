@@ -1,0 +1,13 @@
+[Unit]
+Description=My SampleLocker Turns Service
+After=multi-user.target
+
+[Service]
+Type=idle
+ExecStart=/home/penia/locker_venv/bin/python /home/penia/services/turns/turns_server.py
+Restart=always
+RestartSec=1
+KillSignal=SIGINT
+
+[Install]
+WantedBy=multi-user.target

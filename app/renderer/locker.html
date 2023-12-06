@@ -1,0 +1,335 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>e-Locker</title>
+    <link rel="stylesheet" href="./css/styles.css"> 
+    <link rel="stylesheet" href="./css/animations.css"> 
+</head>
+<body>
+
+    <div class="bg-gradient-to-b from-galicia1-900 to-galicia2-900 h-full opacity-80 select-none overflow-hidden"><!-- contenido -->
+
+        <div class="flex flex-col justify-center rounded-b shadow-2xl h-1/10"><!-- cabecera -->
+            <div class="flex justify-between align-middle">
+                <img src="images/fiuner.png" class="h-12 pl-3">  
+                <a class="text-white text-5xl italic"> e-Locker </a>
+                <img src="images/galicia_w.png" class="h-10 pr-3">       
+            </div>
+        </div><!-- fin cabecera -->
+
+        <div class="flex flex-col justify-start h-9/10 relative"><!-- pagina -->
+            <!-- alertas -->
+            <div class="absolute top-0 left-1/3 w-1/3 items-center">
+                <div class="flex flex-col justify-center">
+                    <div
+                        class="hidden mt-3 inline-flex rounded-lg bg-white text-xl text-success-700 z-50 border-2 border-success-700 bg-opacity-80 shadow-lg"
+                        role="alert"
+                        id="success_alert">
+                        <div class="bg-success-700 p-2 overflow-hidden w-1/6 flex items-center justify-center">
+                            <div class="text-white">
+                                <span>
+                                    <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24"
+                                    fill="currentColor"
+                                    class="h-12 w-12 mt-5 mb-5">
+                                    <path
+                                        fill-rule="evenodd"
+                                        d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z"
+                                        clip-rule="evenodd" />
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="flex flex-col justify-center w-5/6 mt-5 mb-5">
+                            <div id="success_alert_txt" class="ml-4"> Casillero libre! </div>
+                        </div>                        
+                    </div>
+                    <div
+                        class="hidden mt-3 inline-flex rounded-lg bg-white text-xl text-danger-700 z-50 border-2 border-danger-700 bg-opacity-80 shadow-lg"
+                        role="alert"
+                        id="error_alert">
+                        <div class="bg-danger-700 p-2 overflow-hidden w-1/6 flex items-center justify-center">
+                            <div class="text-white">
+                                <span>
+                                    <svg 
+                                    fill="currentColor" 
+                                    viewBox="0 0 24 24" 
+                                    xmlns="http://www.w3.org/2000/svg" 
+                                    aria-hidden="true"
+                                    class="h-12 w-12 mt-5 mb-5">
+                                    <path 
+                                        clip-rule="evenodd" 
+                                        fill-rule="evenodd" 
+                                        d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-1.72 6.97a.75.75 0 10-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 101.06 1.06L12 13.06l1.72 1.72a.75.75 0 101.06-1.06L13.06 12l1.72-1.72a.75.75 0 10-1.06-1.06L12 10.94l-1.72-1.72z">
+                                    </path>
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="flex flex-col justify-center w-5/6 mt-5 mb-5">
+                            <div id="error_alert_txt" class="ml-4"> Casillero ocupado! </div>   
+                        </div>                    
+                    </div>
+                    <div
+                        class="hidden mt-3 inline-flex rounded-lg bg-white text-xl text-warning-700 z-50 border-2 border-warning-700 bg-opacity-80 shadow-lg"
+                        role="alert"
+                        id="warning_alert">
+                        <div class="bg-warning-700 overflow-hidden w-1/6 flex items-center justify-center">
+                            <div class="text-white">
+                                <span>
+                                    <svg 
+                                    fill="currentColor" 
+                                    viewBox="0 0 24 24" 
+                                    xmlns="http://www.w3.org/2000/svg" 
+                                    aria-hidden="true"
+                                    class="h-12 w-12 mt-5 mb-5">
+                                    <path 
+                                        clip-rule="evenodd" 
+                                        fill-rule="evenodd" 
+                                        d="M9.401 3.003c1.155-2 4.043-2 5.197 0l7.355 12.748c1.154 2-.29 4.5-2.599 4.5H4.645c-2.309 0-3.752-2.5-2.598-4.5L9.4 3.003zM12 8.25a.75.75 0 01.75.75v3.75a.75.75 0 01-1.5 0V9a.75.75 0 01.75-.75zm0 8.25a.75.75 0 100-1.5.75.75 0 000 1.5z">
+                                    </path>
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="flex flex-col justify-center w-5/6 mt-5 mb-5">
+                            <div id="warning_alert_txt" class="ml-4">  </div> 
+                        </div>                    
+                    </div>
+                    <div
+                        class="hidden mt-3 inline-flex rounded-lg bg-white text-xl text-info-800 z-50 border-2 border-info-800 bg-opacity-80 shadow-lg"
+                        role="alert"
+                        id="info_alert">
+                        <div class="bg-info-800 p-2 overflow-hidden w-1/6 flex items-center justify-center">
+                            <div class="text-white">
+                                <span>
+                                    <svg 
+                                    fill="currentColor" 
+                                    viewBox="0 0 24 24" 
+                                    xmlns="http://www.w3.org/2000/svg" 
+                                    aria-hidden="true"
+                                    class="h-12 w-12 mt-5 mb-5">
+                                    <path 
+                                        clip-rule="evenodd" 
+                                        fill-rule="evenodd" 
+                                        d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm8.706-1.442c1.146-.573 2.437.463 2.126 1.706l-.709 2.836.042-.02a.75.75 0 01.67 1.34l-.04.022c-1.147.573-2.438-.463-2.127-1.706l.71-2.836-.042.02a.75.75 0 11-.671-1.34l.041-.022zM12 9a.75.75 0 100-1.5.75.75 0 000 1.5z">
+                                    </path>
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="flex-col items-center w-5/6 mt-5 mb-5">
+                            <div id="info_alert_txt" class="ml-4 mr-2 mb-2 mt-2"> <b>Confirma que desea finalizar su turno?</b> </div> 
+                            <div class="ml-4 mr-2 mb-5">Recuerde retirar sus pertenencias antes de finalizar.</div>
+                            <div class="flex justify-between ml-4 mr-5 mb-3">
+                                <button id="cancelar" class="w-1/3 border rounded-lg border-info-800 bg-info-800 text-white active:scale-90 active:bg-clip-border pt-1 pb-1"> Cancelar </button>
+                                <button id="confirmar" class="w-1/3 border rounded-lg border-info-800 active:bg-gray-50 active:scale-90 active:bg-clip-border pt-1 pb-1"> Finalizar </button>
+                            </div>
+                        </div>                    
+                    </div>
+                </div>
+            </div> <!-- fin alertas -->
+
+            <!-- botones -->
+            <div id="barra_botones" class="flex flex-row justify-between pt-4 px-5">
+                <div id="atras" class="btn1">
+                    <svg class="w-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15m0 0l6.75 6.75M4.5 12l6.75-6.75"></path>
+                    </svg>
+                    <a> Salir </a>
+                </div>
+                <div class="flex justify-end text-white text-base align-middle items-center">
+                    <a  class="mt-1 text-xl" id="usuario"> User </a>
+                    <svg class="w-9 h-9 ml-3 rounded-full overflow-visible border-2 border-white" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"></path>
+                    </svg>
+                </div>
+            </div><!-- fin botones -->
+            
+            <!-- loader -->
+            <span id="loader" class="loader absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></span>
+
+            <!-- info -->
+            <div class="flex justify-evenly h-3/4">
+                <!-- casillero -->
+                <div id="info_locker" class="hidden bg-white rounded-lg shadow-2xl shadow-black w-1/3 p-3 m-5 opacity-80 h-full" >         
+                    <div
+                      class="flex items-center before:mt-0.5 before:flex-1 before:border-t before:border-neutral-300 after:mt-0.5 after:flex-1 after:border-t after:border-neutral-300 h-1/6">
+                      <p id="casillero"
+                        class="mx-4 mb-0 text-center font-semibold text-xl">
+                        Casillero
+                      </p>
+                    </div>   
+                    <div class="grid grid-cols-2 gap-0 place-content-stretch h-5/6">     
+                        <div class="col-span-2 pt-3 mb-4">
+                            <div class="flex justify-start mb-3 text-gray-700">
+                                <svg class="h-9" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <p class="font-semibold mt-1 text-xl">
+                                    Tiempo Restante: 
+                                </p>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="flex font-semibold text-6xl text-gray-800 ml-2">
+                                    <p id="hour">
+                                        --
+                                    </p>
+                                    <p class="animate-[pulse_1s_infinite]">
+                                        :
+                                    </p>
+                                    <p id="min">
+                                        --hs
+                                    </p>
+                                </span>
+                                <div id="timeout_warn" class="active:scale-110 transition ease-in-out">
+                                    <svg class="h-12 w-12 text-yellow-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>             
+                        <div id="abrir" class="flex justify-center items-center font-bold border-t border-r border-gray-100 active:bg-gray-50 active:scale-90 active:text-galicia2-900 active:rounded-2xl">
+                            <div class="flex-col justify-center align-middle">
+                                <div class="flex justify-center">
+                                    <svg class="h-20 mb-4" viewBox='0 0 24 24' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'>
+                                        <defs>
+                                            <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                <stop offset="0%" style="stop-color:#4f68f9;stop-opacity:1" />
+                                                <stop offset="100%" style="stop-color:#cb28ff;stop-opacity:1" />
+                                            </linearGradient>
+                                        </defs>
+                                        <g stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'>
+                                            <g transform='translate(-816.000000, -96.000000)' fill-rule='nonzero'>
+                                                <g transform='translate(816.000000, 96.000000)'>
+                                                    <path d='M24,0 L24,24 L0,24 L0,0 L24,0 Z M12.5934901,23.257841 L12.5819402,23.2595131 L12.5108777,23.2950439 L12.4918791,23.2987469 L12.4918791,23.2987469 L12.4767152,23.2950439 L12.4056548,23.2595131 C12.3958229,23.2563662 12.3870493,23.2590235 12.3821421,23.2649074 L12.3780323,23.275831 L12.360941,23.7031097 L12.3658947,23.7234994 L12.3769048,23.7357139 L12.4804777,23.8096931 L12.4953491,23.8136134 L12.4953491,23.8136134 L12.5071152,23.8096931 L12.6106902,23.7357139 L12.6232938,23.7196733 L12.6232938,23.7196733 L12.6266527,23.7031097 L12.609561,23.275831 C12.6075724,23.2657013 12.6010112,23.2592993 12.5934901,23.257841 L12.5934901,23.257841 Z M12.8583906,23.1452862 L12.8445485,23.1473072 L12.6598443,23.2396597 L12.6498822,23.2499052 L12.6498822,23.2499052 L12.6471943,23.2611114 L12.6650943,23.6906389 L12.6699349,23.7034178 L12.6699349,23.7034178 L12.678386,23.7104931 L12.8793402,23.8032389 C12.8914285,23.8068999 12.9022333,23.8029875 12.9078286,23.7952264 L12.9118235,23.7811639 L12.8776777,23.1665331 C12.8752882,23.1545897 12.8674102,23.1470016 12.8583906,23.1452862 L12.8583906,23.1452862 Z M12.1430473,23.1473072 C12.1332178,23.1423925 12.1221763,23.1452606 12.1156365,23.1525954 L12.1099173,23.1665331 L12.0757714,23.7811639 C12.0751323,23.7926639 12.0828099,23.8018602 12.0926481,23.8045676 L12.108256,23.8032389 L12.3092106,23.7104931 L12.3186497,23.7024347 L12.3186497,23.7024347 L12.3225043,23.6906389 L12.340401,23.2611114 L12.337245,23.2485176 L12.337245,23.2485176 L12.3277531,23.2396597 L12.1430473,23.1473072 Z' fill-rule='nonzero'>
+                                                    </path>
+                                                    <path d='M14.2534,2.29104 C15.121985,2.146279 15.916565,2.77536663 15.9938515,3.63333818 L16,3.77063 L16,4.99994 L18,4.99994 C19.0543909,4.99994 19.9181678,5.81581733 19.9945144,6.85067759 L20,6.99994 L20,16.9999 C20,18.0542909 19.18415,18.9180678 18.1492661,18.9944144 L18,18.9999 L16,18.9999 L16,20.2293 C16,21.109855 15.2488492,21.7901453 14.3898362,21.7253089 L14.2534,21.7088 L5.6712,20.2785 C4.76040611,20.1266333 4.07933154,19.3740213 4.00646768,18.4672313 L4,18.3057 L4,5.6942 C4,4.77083556 4.63047491,3.97529117 5.51293334,3.7543449 L5.6712,3.72141 L14.2534,2.29104 Z M14,4.36087 L6,5.6942 L6,18.3057 L14,19.639 L14,4.36087 Z M18,6.99994 L16,6.99994 L16,16.9999 L18,16.9999 L18,6.99994 Z M11.5,10.4999 C12.3284,10.4999 13,11.1715 13,11.9999 C13,12.8284 12.3284,13.4999 11.5,13.4999 C10.6716,13.4999 10,12.8284 10,11.9999 C10,11.1715 10.6716,10.4999 11.5,10.4999 Z' fill="url(#grad1)">
+                                                    </path>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <a class="text-transparent bg-clip-text bg-gradient-to-br from-galicia1-900 to-galicia2-900 font-bold text-xl text-center"> Abrir Casillero </a>
+                            </div>
+                            
+                        </div>
+                        <div id="fin_turno" class="flex justify-center items-center font-bold text-center border-t border-l border-gray-100 active:bg-gray-50 active:scale-90 active:bg-clip-border active:rounded-2xl">
+                            <div class="flex-col justify-center align-middle">
+                                <div class="flex justify-center">
+                                    <svg class="h-20 mb-4" viewBox='0 0 24 24' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'>
+                                        <defs>
+                                            <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                <stop offset="0%" style="stop-color:#4f68f9;stop-opacity:1" />
+                                                <stop offset="100%" style="stop-color:#cb28ff;stop-opacity:1" />
+                                            </linearGradient>
+                                        </defs>
+                                        <g stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'>
+                                            <g transform='translate(-672.000000, -96.000000)' fill-rule='nonzero'>
+                                                <g transform='translate(672.000000, 96.000000)'>
+                                                    <path d='M24,0 L24,24 L0,24 L0,0 L24,0 Z M12.5934901,23.257841 L12.5819402,23.2595131 L12.5108777,23.2950439 L12.4918791,23.2987469 L12.4918791,23.2987469 L12.4767152,23.2950439 L12.4056548,23.2595131 C12.3958229,23.2563662 12.3870493,23.2590235 12.3821421,23.2649074 L12.3780323,23.275831 L12.360941,23.7031097 L12.3658947,23.7234994 L12.3769048,23.7357139 L12.4804777,23.8096931 L12.4953491,23.8136134 L12.4953491,23.8136134 L12.5071152,23.8096931 L12.6106902,23.7357139 L12.6232938,23.7196733 L12.6232938,23.7196733 L12.6266527,23.7031097 L12.609561,23.275831 C12.6075724,23.2657013 12.6010112,23.2592993 12.5934901,23.257841 L12.5934901,23.257841 Z M12.8583906,23.1452862 L12.8445485,23.1473072 L12.6598443,23.2396597 L12.6498822,23.2499052 L12.6498822,23.2499052 L12.6471943,23.2611114 L12.6650943,23.6906389 L12.6699349,23.7034178 L12.6699349,23.7034178 L12.678386,23.7104931 L12.8793402,23.8032389 C12.8914285,23.8068999 12.9022333,23.8029875 12.9078286,23.7952264 L12.9118235,23.7811639 L12.8776777,23.1665331 C12.8752882,23.1545897 12.8674102,23.1470016 12.8583906,23.1452862 L12.8583906,23.1452862 Z M12.1430473,23.1473072 C12.1332178,23.1423925 12.1221763,23.1452606 12.1156365,23.1525954 L12.1099173,23.1665331 L12.0757714,23.7811639 C12.0751323,23.7926639 12.0828099,23.8018602 12.0926481,23.8045676 L12.108256,23.8032389 L12.3092106,23.7104931 L12.3186497,23.7024347 L12.3186497,23.7024347 L12.3225043,23.6906389 L12.340401,23.2611114 L12.337245,23.2485176 L12.337245,23.2485176 L12.3277531,23.2396597 L12.1430473,23.1473072 Z' fill-rule='nonzero'>
+                                                    </path>
+                                                    <path d='M12,3 C12.5523,3 13,3.44772 13,4 C13,4.51283143 12.613973,4.93550653 12.1166239,4.9932722 L12,5 L7,5 C6.48716857,5 6.06449347,5.38604429 6.0067278,5.88337975 L6,6 L6,18 C6,18.51285 6.38604429,18.9355092 6.88337975,18.9932725 L7,19 L11.5,19 C12.0523,19 12.5,19.4477 12.5,20 C12.5,20.51285 12.113973,20.9355092 11.6166239,20.9932725 L11.5,21 L7,21 C5.40232321,21 4.09633941,19.7511226 4.00509271,18.1762773 L4,18 L4,6 C4,4.40232321 5.24892392,3.09633941 6.82372764,3.00509271 L7,3 L12,3 Z M17.707,8.46447 L20.5355,11.2929 C20.926,11.6834 20.926,12.3166 20.5355,12.7071 L17.707,15.5355 C17.3165,15.9261 16.6834,15.9261 16.2928,15.5355 C15.9023,15.145 15.9023,14.5118 16.2928,14.1213 L17.4142,13 L12,13 C11.4477,13 11,12.5523 11,12 C11,11.4477 11.4477,11 12,11 L17.4142,11 L16.2928,9.87868 C15.9023,9.48816 15.9023,8.85499 16.2928,8.46447 C16.6834,8.07394 17.3165,8.07394 17.707,8.46447 Z' fill='url(#grad1)'>
+                                                    </path>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <a class="text-transparent bg-clip-text bg-gradient-to-br from-galicia1-900 to-galicia2-900 font-bold text-xl text-center"> Finalizar Turno </a>
+                            </div>
+                        </div>
+                    </div> 
+                </div><!-- fin casillero -->
+                <!-- locker -->
+                <div id="cabinet" class="hiddel h-full m-3 ">
+                    <div class="flex flex-col h-full shadow-2xl shadow-black rounded overflow-hidden bg-galicia1-900">
+                        <div class="flex flex-row h-lr1">
+                            <div class="relative">
+                                <img id="lock1_c" src="images/locker_c1.png" alt="casillero1" class="h-full">
+                                <img id="lock1_o" src="images/locker_o1.png" alt="casillero1" class="h-full hidden">
+                            </div>
+                            <div class="relative">
+                                <img id="lock2_c" src="images/locker_c2.png" alt="casillero2" class="h-full ">
+                                <img id="lock2_o" src="images/locker_o2.png" alt="casillero2" class="h-full hidden">
+                            </div>
+                            <div class="relative">
+                                <img id="lock3_c" src="images/locker_c3.png" alt="casillero3" class="h-full ">
+                                <img id="lock3_o" src="images/locker_o3.png" alt="casillero3" class="h-full hidden">
+                            </div>
+                            <div class="relative">
+                                <img id="lock4_c" src="images/locker_c4.png" alt="casillero4" class="h-full ">
+                                <img id="lock4_o" src="images/locker_o4.png" alt="casillero4" class="h-full hidden">
+                            </div>
+                        </div>
+                        <div class="flex flex-row h-lr2">
+                            <div class="relative">
+                                <img id="lock5_c" src="images/locker_c5.png" alt="casillero5" class="h-full">
+                                <img id="lock5_o" src="images/locker_o5.png" alt="casillero4" class="h-full hidden">
+                            </div>
+                            <div class="relative">
+                                <img id="lock6_c" src="images/locker_c6.png" alt="casillero6" class="h-full">
+                                <img id="lock6_o" src="images/locker_o6.png" alt="casillero4" class="h-full hidden">
+                            </div>
+                            <div class="relative">
+                                <img id="lock7_c" src="images/locker_c7.png" alt="casillero7" class="h-full">
+                                <img id="lock7_o" src="images/locker_o7.png" alt="casillero4" class="h-full hidden">
+                            </div>
+                            <div class="relative">
+                                <img id="lock8_c" src="images/locker_c8.png" alt="casillero8" class="h-full">
+                                <img id="lock8_o" src="images/locker_o8.png" alt="casillero4" class="h-full hidden">
+                            </div>
+                        </div>
+                        <div class="flex flex-row h-lr3">
+                            <div class="relative">
+                                <img id="lock9_c" src="images/locker_c9.png" alt="casillero9" class="h-full">
+                                <img id="lock9_o" src="images/locker_o9.png" alt="casillero4" class="h-full hidden">
+                            </div>
+                            <div class="relative">
+                                <img id="lock10_c" src="images/locker_c10.png" alt="casillero10" class="h-full">
+                                <img id="lock10_o" src="images/locker_o10.png" alt="casillero4" class="h-full hidden">
+                            </div>
+                            <div class="relative">
+                                <img id="lock11_c" src="images/locker_c11.png" alt="casillero11" class="h-full">
+                                <img id="lock11_o" src="images/locker_o11.png" alt="casillero4" class="h-full hidden">
+                            </div>
+                            <div class="relative">
+                                <img id="lock12_c" src="images/locker_c12.png" alt="casillero12" class="h-full">
+                                <img id="lock12_o" src="images/locker_o12.png" alt="casillero4" class="h-full hidden">
+                            </div>
+                        </div>
+                        <div class="flex flex-row h-lr4">
+                            <div class="relative">
+                                <img id="lock13_c" src="images/locker_c13.png" alt="casillero13" class="h-full">
+                                <img id="lock13_o" src="images/locker_o13.png" alt="casillero4" class="h-full hidden">
+                            </div>
+                            <div class="relative">
+                                <img id="lock14_c" src="images/locker_c14.png" alt="casillero14" class="h-full">
+                                <img id="lock14_o" src="images/locker_o14.png" alt="casillero4" class="h-full hidden">
+                            </div>
+                            <div class="relative">
+                                <img id="lock15_c" src="images/locker_c15.png" alt="casillero15" class="h-full">
+                                <img id="lock15_o" src="images/locker_o15.png" alt="casillero4" class="h-full hidden">
+                            </div>
+                            <div class="relative">
+                                <img id="lock16_c" src="images/locker_c16.png" alt="casillero16" class="h-full">
+                                <img id="lock16_o" src="images/locker_o16.png" alt="casillero4" class="h-full hidden">
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- fin locker -->
+                
+            </div>
+
+        </div><!-- fin pagina -->
+
+    </div><!-- fin contenido -->
+
+    <script src="./js/locker_controller.js"></script>
+    
+</body>
+</html>

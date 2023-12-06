@@ -1,0 +1,296 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>e-Locker</title>
+    <link rel="stylesheet" href="./css/styles.css"> 
+    <link rel="stylesheet" href="./css/animations.css"> 
+    <link rel="stylesheet" href="./css/datepicker.css"> 
+    <link rel="stylesheet" href="./css/charts.min.css">
+</head>
+<body>
+
+    <div class="bg-gradient-to-b from-galicia1-900 to-galicia2-900 h-full opacity-80 cursor-none overflow-hidden"><!-- contenido -->
+
+        <div class="flex flex-col justify-center rounded-b shadow-2xl h-1/10"><!-- cabecera -->
+            <div class="flex justify-between align-middle">
+                <img src="images/fiuner.png" class="h-12 pl-3">  
+                <a class="text-white text-4xl italic"> e-Locker </a>
+                <img src="images/galicia_w.png" class="h-10 pr-3">  
+            </div>
+        </div><!-- fin cabecera -->
+
+        <div class="flex flex-col justify-start h-9/10"><!-- pagina -->
+            <!-- alertas -->
+            <div class="absolute top-0 left-1/3 w-1/3 items-center">
+                <div class="flex flex-col justify-center">
+                    <div
+                        class="hidden mt-3 inline-flex rounded-lg bg-white text-xl text-success-700 z-50 border-2 border-success-700 bg-opacity-80 shadow-lg"
+                        role="alert"
+                        id="success_alert">
+                        <div class="bg-success-700 p-2 overflow-hidden w-1/6 flex items-center justify-center">
+                            <div class="text-white">
+                                <span>
+                                    <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24"
+                                    fill="currentColor"
+                                    class="h-12 w-12 mt-5 mb-5">
+                                    <path
+                                        fill-rule="evenodd"
+                                        d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z"
+                                        clip-rule="evenodd" />
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="flex flex-col justify-center w-5/6 mt-5 mb-5">
+                            <div id="success_alert_txt" class="ml-4"> Casillero libre! </div>
+                        </div>                        
+                    </div>
+                    <div
+                        class="hidden mt-3 inline-flex rounded-lg bg-white text-xl text-danger-700 z-50 border-2 border-danger-700 bg-opacity-80 shadow-lg"
+                        role="alert"
+                        id="error_alert">
+                        <div class="bg-danger-700 p-2 overflow-hidden w-1/6 flex items-center justify-center">
+                            <div class="text-white">
+                                <span>
+                                    <svg 
+                                    fill="currentColor" 
+                                    viewBox="0 0 24 24" 
+                                    xmlns="http://www.w3.org/2000/svg" 
+                                    aria-hidden="true"
+                                    class="h-12 w-12 mt-5 mb-5">
+                                    <path 
+                                        clip-rule="evenodd" 
+                                        fill-rule="evenodd" 
+                                        d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-1.72 6.97a.75.75 0 10-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 101.06 1.06L12 13.06l1.72 1.72a.75.75 0 101.06-1.06L13.06 12l1.72-1.72a.75.75 0 10-1.06-1.06L12 10.94l-1.72-1.72z">
+                                    </path>
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="flex flex-col justify-center w-5/6 mt-5 mb-5">
+                            <div id="error_alert_txt" class="ml-4"> Casillero ocupado! </div>   
+                        </div>                    
+                    </div>
+                    <div
+                        class="hidden mt-3 inline-flex rounded-lg bg-white text-xl text-warning-700 z-50 border-2 border-warning-700 bg-opacity-80 shadow-lg"
+                        role="alert"
+                        id="warning_alert">
+                        <div class="bg-warning-700 overflow-hidden w-1/6 flex items-center justify-center">
+                            <div class="text-white">
+                                <span>
+                                    <svg 
+                                    fill="currentColor" 
+                                    viewBox="0 0 24 24" 
+                                    xmlns="http://www.w3.org/2000/svg" 
+                                    aria-hidden="true"
+                                    class="h-12 w-12 mt-5 mb-5">
+                                    <path 
+                                        clip-rule="evenodd" 
+                                        fill-rule="evenodd" 
+                                        d="M9.401 3.003c1.155-2 4.043-2 5.197 0l7.355 12.748c1.154 2-.29 4.5-2.599 4.5H4.645c-2.309 0-3.752-2.5-2.598-4.5L9.4 3.003zM12 8.25a.75.75 0 01.75.75v3.75a.75.75 0 01-1.5 0V9a.75.75 0 01.75-.75zm0 8.25a.75.75 0 100-1.5.75.75 0 000 1.5z">
+                                    </path>
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="flex flex-col justify-center w-5/6 mt-5 mb-5">
+                            <div id="warning_alert_txt" class="ml-4">  </div> 
+                        </div>                    
+                    </div>
+                    <div
+                        class="hidden mt-3 inline-flex rounded-lg bg-white text-xl text-info-800 z-50 border-2 border-info-800 bg-opacity-80 shadow-lg"
+                        role="alert"
+                        id="info_alert">
+                        <div class="bg-info-800 p-2 overflow-hidden w-1/6 flex items-center justify-center">
+                            <div class="text-white">
+                                <span>
+                                    <svg 
+                                    fill="currentColor" 
+                                    viewBox="0 0 24 24" 
+                                    xmlns="http://www.w3.org/2000/svg" 
+                                    aria-hidden="true"
+                                    class="h-12 w-12 mt-5 mb-5">
+                                    <path 
+                                        clip-rule="evenodd" 
+                                        fill-rule="evenodd" 
+                                        d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm8.706-1.442c1.146-.573 2.437.463 2.126 1.706l-.709 2.836.042-.02a.75.75 0 01.67 1.34l-.04.022c-1.147.573-2.438-.463-2.127-1.706l.71-2.836-.042.02a.75.75 0 11-.671-1.34l.041-.022zM12 9a.75.75 0 100-1.5.75.75 0 000 1.5z">
+                                    </path>
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="flex-col items-center w-5/6 mt-5 mb-5">
+                            <div id="info_alert_txt" class="ml-4 mr-2 mb-2 mt-2"> <b>Confirma que desea finalizar su turno?</b> </div> 
+                            <div class="ml-4 mr-2 mb-5">Recuerde retirar sus pertenencias antes de finalizar.</div>
+                            <div class="flex justify-between ml-4 mr-5 mb-3">
+                                <button id="cancelar" class="w-1/3 border rounded-lg border-info-800 bg-info-800 text-white active:scale-90 active:bg-clip-border pt-1 pb-1"> Cancelar </button>
+                                <button id="confirmar" class="w-1/3 border rounded-lg border-info-800 active:bg-gray-50 active:scale-90 active:bg-clip-border pt-1 pb-1"> Finalizar </button>
+                            </div>
+                        </div>                    
+                    </div>
+                </div>
+            </div> <!-- fin alertas -->
+
+            <!-- loader -->
+            <span id="loader" class="loader absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></span>
+            
+            <!-- botones -->
+            <div class="flex flex-row justify-between pt-4 px-5">
+                <div id="atras" class="btn1">
+                    <svg class="w-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15m0 0l6.75 6.75M4.5 12l6.75-6.75"></path>
+                    </svg>
+                    <a> Atras </a>
+                </div>
+                <div class="flex justify-end text-white text-base align-middle">
+                    <a  class="mt-1 text-xl" id="usuario">  </a>
+                    <svg class="w-9 h-9 ml-3 rounded-full overflow-visible border-2 border-white" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"></path>
+                    </svg>
+                </div>
+            </div><!-- fin botones -->
+
+            <!-- gráficos -->
+            <div id="graficos" class="flex h-9/10 justify-evenly hidden">
+                <div class="bg-white opacity-90 rounded-lg shadow w-3/4 px-3 pb-3 m-5 flex-col object-center h-9/10">
+                    <div class="flex justify-center p-2 h-1/10">
+                        <h1 class="text-2xl">
+                            Estadísticas
+                        </h1>
+                    </div>                    
+                    <div class="flex flex-row justify-evenly pb-3 px-3 h-1/5">
+                        <div class="flex-col w-1/2 h-full border border-gray-200 rounded-l p-3">
+                            <div class="pb-1 h-1/2">
+                                <a>Rango de fechas: </a>
+                            </div>
+                            <div class="flex justify-between h-1/2">
+                                <input id="datefrom" type="date" name="datefrom" class="border-2 border-blue-400 rounded p-1">
+                                <a class="px-3">-</a>
+                                <a id="dateto"  type="date" class="border-2 rounded pt-1 pl-3 pr-10 h-full"> dd/mm/aaaa </a>
+                            </div>
+                        </div>
+                        <div class="w-1/2 flex border justify-evenly content-center border-gray-200 rounded-r p-5">
+                            <div class="flex items-center border-2 rounded-full">
+                                <input checked id="radio1" type="radio" value="" name="colored-radio" class="w-8 h-8 ml-4 text-blue-600 bg-gray-100 border-gray-300 peer ">
+                                <label for="radio1" class="w-full ml-4 mr-8 text-lg font-medium text-gray-900 peer-checked:text-blue-400 peer-checked:text-bold">Turnos</label>
+                            </div>
+                            <div class="flex items-center border-2 rounded-full">
+                                <input id="radio2" type="radio" value="" name="colored-radio" class="w-8 h-8 ml-4 text-blue-600 bg-gray-100 border-gray-300 peer">
+                                <label for="radio2" class="w-full mx-4 text-lg font-medium text-gray-900 peer-checked:text-blue-400 peer-checked:text-bold">Consumo</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-col p-3 m-3 w-full h-3/5">
+                        <div id="barras" class="flex w-full h-full hidden"><!-- gráfico de barras -->
+                            <div class="w-1/12 flex-col justify-items-center">
+                                <div class="h-2/5"></div>
+                                <div class="flex h-1/5 -rotate-90">
+                                    <a>Turnos</a>
+                                </div>
+                                <div class="h-2/5"></div>
+                            </div>
+                            <table class="charts-css column show-labels show-primary-axis show-8-secondary-axes data-spacing-5 w-5/6 h-full">
+                                <caption> Turnos </caption>
+                                <tbody>
+                                <tr> 
+                                    <th id="lab1" class="text-base" scope="row">  </th>
+                                    <td id="bar1" class="rounded text-white" style="--size: 0" >  </td>
+                                </tr>
+                                <tr>
+                                    <th id="lab2" class="text-base" scope="row">  </th>
+                                    <td id="bar2" class="rounded text-white" style="--size: 0">  </td>
+                                </tr>
+                                <tr>
+                                    <th id="lab3" class="text-base" scope="row">  </th>
+                                    <td id="bar3" class="rounded text-white" style="--size: 0">  </td>
+                                </tr>
+                                <tr>
+                                    <th id="lab4" class="text-base" scope="row">  </th>
+                                    <td id="bar4" class="rounded text-white" style="--size: 0">  </td>
+                                </tr>
+                                <tr>
+                                    <th id="lab5" class="text-base" scope="row">  </th>
+                                    <td id="bar5" class="rounded text-white" style="--size: 0">  </td>
+                                </tr>
+                                <tr>
+                                    <th id="lab6" class="text-base" scope="row">  </th>
+                                    <td id="bar6" class="rounded text-white" style="--size: 0">  </td>
+                                </tr>
+                                <tr>
+                                    <th id="lab7" class="text-base" scope="row">  </th>
+                                    <td id="bar7" class="rounded text-white" style="--size: 0">  </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <div class="w-1/12">
+                                
+                            </div>
+                        </div><!-- fin gráfico de barras -->
+
+                        <div id="lineas" class="flex w-full h-full "><!-- gráfico de líneas -->
+                            <div class="w-1/12 flex-col justify-items-center">
+                                <div class="h-2/5"></div>
+                                <div class="flex h-1/5 -rotate-90">
+                                    <a>Consumo[W.h]</a>
+                                </div>
+                                <div class="h-2/5"></div>
+                            </div>
+                            <table class="charts-css area show-labels show-primary-axis show-8-secondary-axes w-5/6 h-full">
+                                <caption> Consumo </caption>
+                                <tbody>
+                                <tr> 
+                                    <th id="lab8" class="text-base" scope="row">  </th>
+                                    <td id="lin1" class="rounded text-black" style="--size: 0" >  </td>
+                                </tr>
+                                <tr>
+                                    <th id="lab9" class="text-base" scope="row">  </th>
+                                    <td id="lin2" class="rounded text-black" style="--size: 0">  </td>
+                                </tr>
+                                <tr>
+                                    <th id="lab10" class="text-base" scope="row">  </th>
+                                    <td id="lin3" class="rounded text-black" style="--size: 0">  </td>
+                                </tr>
+                                <tr>
+                                    <th id="lab11" class="text-base" scope="row">  </th>
+                                    <td id="lin4" class="rounded text-black" style="--size: 0">  </td>
+                                </tr>
+                                <tr>
+                                    <th id="lab12" class="text-base" scope="row">  </th>
+                                    <td id="lin5" class="rounded text-black" style="--size: 0">  </td>
+                                </tr>
+                                <tr>
+                                    <th id="lab13" class="text-base" scope="row">  </th>
+                                    <td id="lin6" class="rounded text-black" style="--size: 0">  </td>
+                                </tr>
+                                <tr>
+                                    <th id="lab14" class="text-base" scope="row">  </th>
+                                    <td id="lin7" class="rounded text-black" style="--size: 0">  </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <div class="w-1/12">
+                                
+                            </div>
+                        </div><!-- fin gráfico de líneas -->
+
+                    </div>
+                    <div class="flex justify-center p-2 h-1/10 h-">
+                        <h1 class="pb-4">
+                            Fecha
+                        </h1>
+                    </div> 
+                </div>
+            </div>
+
+        </div><!-- fin pagina -->
+
+    </div><!-- fin contenido -->
+
+    <script src="./js/stats_controller.js"></script>
+    
+</body>
+</html>

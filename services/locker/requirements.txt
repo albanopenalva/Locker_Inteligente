@@ -1,0 +1,5 @@
+Adafruit-GPIO==1.0.3
+grpcio==1.56.2
+mfrc522==0.0.7
+pi-ina219==1.4.1
+wiringpi==2.60.1

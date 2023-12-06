@@ -1,0 +1,336 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>e-Locker</title>
+    <link rel="stylesheet" href="./css/styles.css"> 
+    <link rel="stylesheet" href="./css/animations.css"> 
+</head>
+<body>
+
+    <div class="bg-gradient-to-b from-galicia1-900 to-galicia2-900 h-full opacity-80 overflow-hidden"><!-- contenido -->
+
+        <div class="flex flex-col justify-center rounded-b shadow-2xl h-1/10"><!-- cabecera -->
+            <div class="flex justify-between align-middle">
+                <img src="images/fiuner.png" class="h-12 pl-3">  
+                <a class="text-white text-5xl italic"> e-Locker </a>
+                <img src="images/galicia_w.png" class="h-10 pr-3">  
+            </div>
+        </div><!-- fin cabecera -->
+
+        <div class="flex flex-col justify-start h-9/10 relative"><!-- pagina -->
+            <!-- alertas -->
+            <div class="absolute top-0 left-1/3 w-1/3 items-center">
+                <div class="flex flex-col justify-center">
+                    <div
+                        class="hidden mt-3 inline-flex rounded-lg bg-white text-xl text-success-700 z-50 border-2 border-success-700 bg-opacity-80 shadow-lg"
+                        role="alert"
+                        id="success_alert">
+                        <div class="bg-success-700 p-2 overflow-hidden w-1/6 flex items-center justify-center">
+                            <div class="text-white">
+                                <span>
+                                    <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24"
+                                    fill="currentColor"
+                                    class="h-12 w-12 mt-5 mb-5">
+                                    <path
+                                        fill-rule="evenodd"
+                                        d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z"
+                                        clip-rule="evenodd" />
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="flex flex-col justify-center w-5/6 mt-5 mb-5">
+                            <div id="success_alert_txt" class="ml-4"> Casillero libre! </div>
+                        </div>                        
+                    </div>
+                    <div
+                        class="hidden mt-3 inline-flex rounded-lg bg-white text-xl text-danger-700 z-50 border-2 border-danger-700 bg-opacity-80 shadow-lg"
+                        role="alert"
+                        id="error_alert">
+                        <div class="bg-danger-700 p-2 overflow-hidden w-1/6 flex items-center justify-center">
+                            <div class="text-white">
+                                <span>
+                                    <svg 
+                                    fill="currentColor" 
+                                    viewBox="0 0 24 24" 
+                                    xmlns="http://www.w3.org/2000/svg" 
+                                    aria-hidden="true"
+                                    class="h-12 w-12 mt-5 mb-5">
+                                    <path 
+                                        clip-rule="evenodd" 
+                                        fill-rule="evenodd" 
+                                        d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-1.72 6.97a.75.75 0 10-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 101.06 1.06L12 13.06l1.72 1.72a.75.75 0 101.06-1.06L13.06 12l1.72-1.72a.75.75 0 10-1.06-1.06L12 10.94l-1.72-1.72z">
+                                    </path>
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="flex flex-col justify-center w-5/6 mt-5 mb-5">
+                            <div id="error_alert_txt" class="ml-4"> Casillero ocupado! </div>   
+                        </div>                    
+                    </div>
+                    <div
+                        class="hidden mt-3 inline-flex rounded-lg bg-white text-xl text-warning-700 z-50 border-2 border-warning-700 bg-opacity-80 shadow-lg"
+                        role="alert"
+                        id="warning_alert">
+                        <div class="bg-warning-700 overflow-hidden w-1/6 flex items-center justify-center">
+                            <div class="text-white">
+                                <span>
+                                    <svg 
+                                    fill="currentColor" 
+                                    viewBox="0 0 24 24" 
+                                    xmlns="http://www.w3.org/2000/svg" 
+                                    aria-hidden="true"
+                                    class="h-12 w-12 mt-5 mb-5">
+                                    <path 
+                                        clip-rule="evenodd" 
+                                        fill-rule="evenodd" 
+                                        d="M9.401 3.003c1.155-2 4.043-2 5.197 0l7.355 12.748c1.154 2-.29 4.5-2.599 4.5H4.645c-2.309 0-3.752-2.5-2.598-4.5L9.4 3.003zM12 8.25a.75.75 0 01.75.75v3.75a.75.75 0 01-1.5 0V9a.75.75 0 01.75-.75zm0 8.25a.75.75 0 100-1.5.75.75 0 000 1.5z">
+                                    </path>
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="flex flex-col justify-center w-5/6 mt-5 mb-5">
+                            <div id="warning_alert_txt" class="ml-4">  </div> 
+                        </div>                    
+                    </div>
+                    <div
+                        class="hidden mt-3 inline-flex rounded-lg bg-white text-xl text-info-800 z-50 border-2 border-info-800 bg-opacity-80 shadow-lg"
+                        role="alert"
+                        id="info_alert">
+                        <div class="bg-info-800 p-2 overflow-hidden w-1/6 flex items-center justify-center">
+                            <div class="text-white">
+                                <span>
+                                    <svg 
+                                    fill="currentColor" 
+                                    viewBox="0 0 24 24" 
+                                    xmlns="http://www.w3.org/2000/svg" 
+                                    aria-hidden="true"
+                                    class="h-12 w-12 mt-5 mb-5">
+                                    <path 
+                                        clip-rule="evenodd" 
+                                        fill-rule="evenodd" 
+                                        d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm8.706-1.442c1.146-.573 2.437.463 2.126 1.706l-.709 2.836.042-.02a.75.75 0 01.67 1.34l-.04.022c-1.147.573-2.438-.463-2.127-1.706l.71-2.836-.042.02a.75.75 0 11-.671-1.34l.041-.022zM12 9a.75.75 0 100-1.5.75.75 0 000 1.5z">
+                                    </path>
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="flex-col items-center w-5/6 mt-5 mb-5">
+                            <div id="info_alert_txt" class="ml-4 mr-2 mb-2 mt-2"> <b>Confirma que desea finalizar su turno?</b> </div> 
+                            <div class="ml-4 mr-2 mb-5">Recuerde retirar sus pertenencias antes de finalizar.</div>
+                            <div class="flex justify-between ml-4 mr-5 mb-3">
+                                <button id="cancelar" class="w-1/3 border rounded-lg border-info-800 bg-info-800 text-white active:scale-90 active:bg-clip-border pt-1 pb-1"> Cancelar </button>
+                                <button id="confirmar" class="w-1/3 border rounded-lg border-info-800 active:bg-gray-50 active:scale-90 active:bg-clip-border pt-1 pb-1"> Finalizar </button>
+                            </div>
+                        </div>                    
+                    </div>
+                </div>
+            </div> <!-- fin alertas -->
+
+            <!-- botones -->
+            <div id="barra_botones" class="flex flex-row justify-between pt-4 px-5">
+                <div id="atras" class="btn1">
+                    <svg class="w-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15m0 0l6.75 6.75M4.5 12l6.75-6.75"></path>
+                    </svg>
+                    <a> Salir </a>
+                </div>
+                <div class="flex justify-end text-white text-base align-middle">
+                    <a  class="mt-1 text-xl" id="usuario">  </a>
+                    <svg class="w-9 h-9 ml-3 rounded-full overflow-visible border-2 border-white" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"></path>
+                    </svg>
+                </div>
+            </div><!-- fin botones -->
+
+            <!-- loader -->
+            <span id="loader" class="loader absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></span>
+
+            <!-- locker -->
+            <div id="cabinet" class="h-9/10 flex justify-center hidden">
+                <div class="flex flex-col h-9/10 shadow-2xl shadow-black rounded overflow-hidden">
+                    <div class="flex flex-row h-lr1">
+                        <div id="locker1"  class="relative active:scale-110 transition ease-in-out active:opacity-70">
+                            <img id="lock1_c" src="images/locker_c1.png" alt="casillero1" class="h-full">
+                            <img id="lock1_o" src="images/locker_o1.png" alt="casillero1" class="h-full hidden">
+                            <svg id="unlock1" class="hidden unlock" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 10.5V6.75a4.5 4.5 0 119 0v3.75M3.75 21.75h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H3.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"></path>
+                            </svg>
+                            <svg id="lock1" class="hidden lock" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"></path>
+                            </svg>
+                        </div>
+                        <div id="locker2"  class="relative active:scale-110 transition ease-in-out active:opacity-70">
+                            <img id="lock2_c" src="images/locker_c2.png" alt="casillero2" class="h-full ">
+                            <img id="lock2_o" src="images/locker_o2.png" alt="casillero2" class="h-full hidden">
+                            <svg id="unlock2" class="hidden unlock" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 10.5V6.75a4.5 4.5 0 119 0v3.75M3.75 21.75h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H3.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"></path>
+                            </svg>
+                            <svg id="lock2" class="hidden lock" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"></path>
+                            </svg>
+                        </div>
+                        <div id="locker3"  class="relative active:scale-110 transition ease-in-out active:opacity-70">
+                            <img id="lock3_c" src="images/locker_c3.png" alt="casillero3" class="h-full ">
+                            <img id="lock3_o" src="images/locker_o3.png" alt="casillero3" class="h-full hidden">
+                            <svg id="unlock3" class="hidden unlock" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 10.5V6.75a4.5 4.5 0 119 0v3.75M3.75 21.75h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H3.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"></path>
+                            </svg>
+                            <svg id="lock3" class="hidden lock" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"></path>
+                            </svg>
+                        </div>
+                        <div id="locker4"  class="relative active:scale-110 transition ease-in-out active:opacity-70">
+                            <img id="lock4_c" src="images/locker_c4.png" alt="casillero4" class="h-full ">
+                            <img id="lock4_o" src="images/locker_o4.png" alt="casillero4" class="h-full hidden">
+                            <svg id="unlock4" class="hidden unlock" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 10.5V6.75a4.5 4.5 0 119 0v3.75M3.75 21.75h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H3.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"></path>
+                            </svg>
+                            <svg id="lock4" class="hidden lock" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="flex flex-row h-lr2">
+                        <div id="locker5"  class="relative active:scale-110 transition ease-in-out active:opacity-70">
+                            <img id="lock5_c" src="images/locker_c5.png" alt="casillero5" class="h-full">
+                            <img id="lock5_o" src="images/locker_o5.png" alt="casillero4" class="h-full hidden">
+                            <svg id="unlock5" class="hidden unlock" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 10.5V6.75a4.5 4.5 0 119 0v3.75M3.75 21.75h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H3.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"></path>
+                            </svg>
+                            <svg id="lock5" class="hidden lock" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"></path>
+                            </svg>
+                        </div>
+                        <div id="locker6"  class="relative active:scale-110 transition ease-in-out active:opacity-70">
+                            <img id="lock6_c" src="images/locker_c6.png" alt="casillero6" class="h-full">
+                            <img id="lock6_o" src="images/locker_o6.png" alt="casillero4" class="h-full hidden">
+                            <svg id="unlock6" class="hidden unlock" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 10.5V6.75a4.5 4.5 0 119 0v3.75M3.75 21.75h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H3.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"></path>
+                            </svg>
+                            <svg id="lock6" class="hidden lock" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"></path>
+                            </svg>
+                        </div>
+                        <div id="locker7"  class="relative active:scale-110 transition ease-in-out active:opacity-70">
+                            <img id="lock7_c" src="images/locker_c7.png" alt="casillero7" class="h-full">
+                            <img id="lock7_o" src="images/locker_o7.png" alt="casillero4" class="h-full hidden">
+                            <svg id="unlock7" class="hidden unlock" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 10.5V6.75a4.5 4.5 0 119 0v3.75M3.75 21.75h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H3.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"></path>
+                            </svg>
+                            <svg id="lock7" class="hidden lock" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"></path>
+                            </svg>
+                        </div>
+                        <div id="locker8"  class="relative active:scale-110 transition ease-in-out active:opacity-70">
+                            <img id="lock8_c" src="images/locker_c8.png" alt="casillero8" class="h-full">
+                            <img id="lock8_o" src="images/locker_o8.png" alt="casillero4" class="h-full hidden">
+                            <svg id="unlock8" class="hidden unlock" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 10.5V6.75a4.5 4.5 0 119 0v3.75M3.75 21.75h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H3.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"></path>
+                            </svg>
+                            <svg id="lock8" class="hidden lock" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="flex flex-row h-lr3">
+                        <div id="locker9" class="relative active:scale-110 transition ease-in-out active:opacity-70">
+                            <img id="lock9_c" src="images/locker_c9.png" alt="casillero9" class="h-full">
+                            <img id="lock9_o" src="images/locker_o9.png" alt="casillero4" class="h-full hidden">
+                            <svg id="unlock9" class="hidden unlock" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 10.5V6.75a4.5 4.5 0 119 0v3.75M3.75 21.75h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H3.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"></path>
+                            </svg>
+                            <svg id="lock9" class="hidden lock" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"></path>
+                            </svg>
+                        </div>
+                        <div id="locker10" class="relative active:scale-110 transition ease-in-out active:opacity-70">
+                            <img id="lock10_c" src="images/locker_c10.png" alt="casillero10" class="h-full">
+                            <img id="lock10_o" src="images/locker_o10.png" alt="casillero4" class="h-full hidden">
+                            <svg id="unlock10" class="hidden unlock" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 10.5V6.75a4.5 4.5 0 119 0v3.75M3.75 21.75h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H3.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"></path>
+                            </svg>
+                            <svg id="lock10" class="hidden lock" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"></path>
+                            </svg>
+                        </div>
+                        <div id="locker11" class="relative active:scale-110 transition ease-in-out active:opacity-70">
+                            <img id="lock11_c" src="images/locker_c11.png" alt="casillero11" class="h-full">
+                            <img id="lock11_o" src="images/locker_o11.png" alt="casillero4" class="h-full hidden">
+                            <svg id="unlock11" class="hidden unlock" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 10.5V6.75a4.5 4.5 0 119 0v3.75M3.75 21.75h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H3.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"></path>
+                            </svg>
+                            <svg id="lock11" class="hidden lock" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"></path>
+                            </svg>
+                        </div>
+                        <div id="locker12" class="relative active:scale-110 transition ease-in-out active:opacity-70">
+                            <img id="lock12_c" src="images/locker_c12.png" alt="casillero12" class="h-full">
+                            <img id="lock12_o" src="images/locker_o12.png" alt="casillero4" class="h-full hidden">
+                            <svg id="unlock12" class="hidden unlock" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 10.5V6.75a4.5 4.5 0 119 0v3.75M3.75 21.75h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H3.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"></path>
+                            </svg>
+                            <svg id="lock12" class="hidden lock" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="flex flex-row h-lr4">
+                        <div id="locker13" class="relative active:scale-110 transition ease-in-out active:opacity-70">
+                            <img id="lock13_c" src="images/locker_c13.png" alt="casillero13" class="h-full">
+                            <img id="lock13_o" src="images/locker_o13.png" alt="casillero4" class="h-full hidden">
+                            <svg id="unlock13" class="hidden unlock" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 10.5V6.75a4.5 4.5 0 119 0v3.75M3.75 21.75h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H3.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"></path>
+                            </svg>
+                            <svg id="lock13" class="hidden lock" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"></path>
+                            </svg>
+                        </div>
+                        <div id="locker14" class="relative active:scale-110 transition ease-in-out active:opacity-70">
+                            <img id="lock14_c" src="images/locker_c14.png" alt="casillero14" class="h-full">
+                            <img id="lock14_o" src="images/locker_o14.png" alt="casillero4" class="h-full hidden">
+                            <svg id="unlock14" class="hidden unlock" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 10.5V6.75a4.5 4.5 0 119 0v3.75M3.75 21.75h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H3.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"></path>
+                            </svg>
+                            <svg id="lock14" class="hidden lock" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"></path>
+                            </svg>
+                        </div>
+                        <div id="locker15" class="relative active:scale-110 transition ease-in-out active:opacity-70">
+                            <img id="lock15_c" src="images/locker_c15.png" alt="casillero15" class="h-full">
+                            <img id="lock15_o" src="images/locker_o15.png" alt="casillero4" class="h-full hidden">
+                            <svg id="unlock15" class="hidden unlock" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 10.5V6.75a4.5 4.5 0 119 0v3.75M3.75 21.75h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H3.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"></path>
+                            </svg>
+                            <svg id="lock15" class="hidden lock" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"></path>
+                            </svg>
+                        </div>
+                        <div id="locker16" class="relative active:scale-110 transition ease-in-out active:opacity-70">
+                            <img id="lock16_c" src="images/locker_c16.png" alt="casillero16" class="h-full">
+                            <img id="lock16_o" src="images/locker_o16.png" alt="casillero4" class="h-full hidden">
+                            <svg id="unlock16" class="hidden unlock" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 10.5V6.75a4.5 4.5 0 119 0v3.75M3.75 21.75h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H3.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"></path>
+                            </svg>
+                            <svg id="lock16" class="hidden lock" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- fin locker -->
+
+        </div><!-- fin pagina -->
+
+    </div><!-- fin contenido -->
+
+    <script src="./js/selection_controller.js"></script>
+    
+</body>
+</html>

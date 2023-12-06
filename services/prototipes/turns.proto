@@ -1,0 +1,76 @@
+syntax = "proto3";
+
+package turns;
+
+service TURNS{
+    // Looks for turns availables
+    // Returns: list of free lockers
+    rpc GetFreeLockers(empty) returns (freeLockers) {};
+    // Check if user have a turn for a locker
+    // Input: user's id
+    // Return: turn
+    rpc UserGotTurn (id) returns (turn) {};
+    // Check if a locker have an active turn
+    // Input: locker number
+    // Return: turn
+    rpc LockerGotTurn (locker) returns (turn) {};
+    // Starts a locker's turn for an user
+    // Input: turn
+    // Return: success
+    rpc StartTurn (turn) returns (turn) {};
+    // Ends a locker's turn
+    // Input: turn
+    // Return: success
+    rpc EndTurn (turn) returns (success) {};
+    // Send info for turns between dates
+    // Input: dates
+    // Return: stream turn
+    rpc GetTurns (dates) returns (stream turn) {};
+}
+
+message empty{
+}
+
+message id{
+    int64 id = 1;
+}
+
+message locker{
+    int64 num = 1;
+}
+
+message turn{
+    int64 id = 1;
+    bool active = 2;
+    int32 lock_num = 3;
+    string init_time = 4;
+    string end_time = 5;
+}
+
+message freeLockers{
+    bool locker1 = 1; 
+    bool locker2 = 2;
+    bool locker3 = 3;
+    bool locker4 = 4;
+    bool locker5 = 5;
+    bool locker6 = 6;
+    bool locker7 = 7;
+    bool locker8 = 8;
+    bool locker9 = 9;
+    bool locker10 = 10;
+    bool locker11 = 11;
+    bool locker12 = 12;
+    bool locker13 = 13;
+    bool locker14 = 14;
+    bool locker15 = 15;
+    bool locker16 = 16;
+}
+
+message success{
+    bool success = 1;
+}
+
+message dates{
+    string init_datetime = 1;
+    string end_datetime = 2;
+}

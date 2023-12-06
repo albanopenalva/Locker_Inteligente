@@ -1,0 +1,245 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>e-Locker</title>
+    <link rel="stylesheet" href="./css/styles.css"> 
+    <link rel="stylesheet" href="./css/keyboard.css"> 
+    <link rel="stylesheet" href="./css/animations.css"> 
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+
+    <div class="bg-gradient-to-b from-galicia1-900 to-galicia2-900 h-full opacity-80"><!-- contenido -->
+
+        <div class="flex flex-col justify-center rounded-b shadow-2xl h-1/10"><!-- cabecera -->
+            <div class="flex justify-between align-middle">
+                <img src="images/fiuner.png" class="h-12 pl-3">  
+                <a class="text-white text-5xl italic"> e-Locker </a>
+                <img src="images/galicia_w.png" class="h-10 pr-3">       
+            </div>
+        </div><!-- fin cabecera -->
+        
+
+        <div class="flex flex-col justify-start h-9/10 relative"><!-- pagina -->
+            <!-- alertas -->
+            <div class="absolute top-0 left-1/3 w-1/3 items-center">
+                <div class="flex flex-col justify-center">
+                    <div
+                        class="hidden mt-3 inline-flex rounded-lg bg-white text-xl text-success-700 z-50 border-2 border-success-700 bg-opacity-80 shadow-lg"
+                        role="alert"
+                        id="success_alert">
+                        <div class="bg-success-700 p-2 overflow-hidden w-1/6 flex items-center justify-center">
+                            <div class="text-white">
+                                <span>
+                                    <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24"
+                                    fill="currentColor"
+                                    class="h-12 w-12 mt-5 mb-5">
+                                    <path
+                                        fill-rule="evenodd"
+                                        d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z"
+                                        clip-rule="evenodd" />
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="flex flex-col justify-center w-5/6 mt-5 mb-5">
+                            <div id="success_alert_txt" class="ml-4"> Casillero libre! </div>
+                        </div>                        
+                    </div>
+                    <div
+                        class="hidden mt-3 inline-flex rounded-lg bg-white text-xl text-danger-700 z-50 border-2 border-danger-700 bg-opacity-80 shadow-lg"
+                        role="alert"
+                        id="error_alert">
+                        <div class="bg-danger-700 p-2 overflow-hidden w-1/6 flex items-center justify-center">
+                            <div class="text-white">
+                                <span>
+                                    <svg 
+                                    fill="currentColor" 
+                                    viewBox="0 0 24 24" 
+                                    xmlns="http://www.w3.org/2000/svg" 
+                                    aria-hidden="true"
+                                    class="h-12 w-12 mt-5 mb-5">
+                                    <path 
+                                        clip-rule="evenodd" 
+                                        fill-rule="evenodd" 
+                                        d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-1.72 6.97a.75.75 0 10-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 101.06 1.06L12 13.06l1.72 1.72a.75.75 0 101.06-1.06L13.06 12l1.72-1.72a.75.75 0 10-1.06-1.06L12 10.94l-1.72-1.72z">
+                                    </path>
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="flex flex-col justify-center w-5/6 mt-5 mb-5">
+                            <div id="error_alert_txt" class="ml-4"> Casillero ocupado! </div>   
+                        </div>                    
+                    </div>
+                    <div
+                        class="hidden mt-3 inline-flex rounded-lg bg-white text-xl text-warning-700 z-50 border-2 border-warning-700 bg-opacity-80 shadow-lg"
+                        role="alert"
+                        id="warning_alert">
+                        <div class="bg-warning-700 overflow-hidden w-1/6 flex items-center justify-center">
+                            <div class="text-white">
+                                <span>
+                                    <svg 
+                                    fill="currentColor" 
+                                    viewBox="0 0 24 24" 
+                                    xmlns="http://www.w3.org/2000/svg" 
+                                    aria-hidden="true"
+                                    class="h-12 w-12 mt-5 mb-5">
+                                    <path 
+                                        clip-rule="evenodd" 
+                                        fill-rule="evenodd" 
+                                        d="M9.401 3.003c1.155-2 4.043-2 5.197 0l7.355 12.748c1.154 2-.29 4.5-2.599 4.5H4.645c-2.309 0-3.752-2.5-2.598-4.5L9.4 3.003zM12 8.25a.75.75 0 01.75.75v3.75a.75.75 0 01-1.5 0V9a.75.75 0 01.75-.75zm0 8.25a.75.75 0 100-1.5.75.75 0 000 1.5z">
+                                    </path>
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="flex flex-col justify-center w-5/6 mt-5 mb-5">
+                            <div id="warning_alert_txt" class="ml-4">  </div> 
+                        </div>                    
+                    </div>
+                    <div
+                        class="hidden mt-3 inline-flex rounded-lg bg-white text-xl text-info-800 z-50 border-2 border-info-800 bg-opacity-80 shadow-lg"
+                        role="alert"
+                        id="info_alert">
+                        <div class="bg-info-800 p-2 overflow-hidden w-1/6 flex items-center justify-center">
+                            <div class="text-white">
+                                <span>
+                                    <svg 
+                                    fill="currentColor" 
+                                    viewBox="0 0 24 24" 
+                                    xmlns="http://www.w3.org/2000/svg" 
+                                    aria-hidden="true"
+                                    class="h-12 w-12 mt-5 mb-5">
+                                    <path 
+                                        clip-rule="evenodd" 
+                                        fill-rule="evenodd" 
+                                        d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm8.706-1.442c1.146-.573 2.437.463 2.126 1.706l-.709 2.836.042-.02a.75.75 0 01.67 1.34l-.04.022c-1.147.573-2.438-.463-2.127-1.706l.71-2.836-.042.02a.75.75 0 11-.671-1.34l.041-.022zM12 9a.75.75 0 100-1.5.75.75 0 000 1.5z">
+                                    </path>
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="flex-col items-center w-5/6 mt-5 mb-5">
+                            <div id="info_alert_txt" class="ml-4 mr-2 mb-2 mt-2"> <b>Confirma que desea finalizar su turno?</b> </div> 
+                            <div class="ml-4 mr-2 mb-5">Recuerde retirar sus pertenencias antes de finalizar.</div>
+                            <div class="flex justify-between ml-4 mr-5 mb-3">
+                                <button id="cancelar" class="w-1/3 border rounded-lg border-info-800 bg-info-800 text-white active:scale-90 active:bg-clip-border pt-1 pb-1"> Cancelar </button>
+                                <button id="confirmar" class="w-1/3 border rounded-lg border-info-800 active:bg-gray-50 active:scale-90 active:bg-clip-border pt-1 pb-1"> Finalizar </button>
+                            </div>
+                        </div>                    
+                    </div>
+                </div>
+            </div> <!-- fin alertas -->
+
+            <!-- botones -->
+            <div id="barra_botones" class="flex flex-row justify-between pt-4 px-5">
+                <div id="atras" class="btn1">
+                    <svg class="w-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15m0 0l6.75 6.75M4.5 12l6.75-6.75"></path>
+                    </svg>
+                    <a> Atras </a>
+                </div>
+                <div id="disponibles" class="invisible btn1">
+                    <a> Ver disponibles </a>
+                </div>
+            </div><!-- fin botones -->
+
+            <!-- loader -->
+            <span id="loader" class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></span>
+            
+            <div id="form" class="hidden flex justify-evenly">
+                <!-- formulario -->
+                <form id="inputs" class="bg-white opacity-90 rounded-lg shadow w-1/3 px-3 pb-3 m-5 object-center">         
+                    <div
+                      class="my-4 flex items-center before:mt-0.5 before:flex-1 before:border-t before:border-neutral-300 after:mt-0.5 after:flex-1 after:border-t after:border-neutral-300">
+                      <p
+                        class="mx-4 mb-0 text-center font-semibold ">
+                        Usuario nuevo
+                      </p>
+                    </div>
+                    <!-- Legajo -->
+                    <div class="relative mb-3">
+                        <input
+                          type="text"
+                          class="use-keyboard-input peer m-0 block h-min w-full rounded border border-solid border-neutral-300 bg-white bg-clip-padding py-3 px-3 text-base font-normal leading-tight text-neutral-700 ease-in-out placeholder:text-transparent focus:border-primary focus:bg-white focus:text-neutral-700 focus:shadow-te-primary focus:outline-none"
+                          id="file_input"
+                          placeholder="Legajo" />
+                        <label
+                          for="file_input"
+                          class="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-focus:bg-white peer-[:not(:placeholder-shown)]:bg-white peer-[:not(:placeholder-shown)]:-translate-y-[1.15rem] peer-[:not(:placeholder-shown)]:scale-[0.8]"
+                          >Legajo (ej: 202-XXXXXX)</label
+                        >
+                    </div>
+                    <!-- Nombre -->
+                    <div class="relative mb-3">
+                        <input
+                          type="text"
+                          class="use-keyboard-input peer m-0 block h-min w-full rounded border border-solid border-neutral-300 bg-white bg-clip-padding py-3 px-3 text-base font-normal leading-tight text-neutral-700 ease-in-out placeholder:text-transparent focus:border-primary focus:bg-white focus:text-neutral-700 focus:shadow-te-primary focus:outline-none"
+                          id="nombre_input"
+                          placeholder="Nombre" />
+                        <label
+                          for="nombre_input"
+                          class="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-focus:bg-white peer-[:not(:placeholder-shown)]:bg-white peer-[:not(:placeholder-shown)]:-translate-y-[1.15rem] peer-[:not(:placeholder-shown)]:scale-[0.8]"
+                          >Nombre</label
+                        >
+                    </div>
+                    <!-- Apellido -->
+                    <div class="relative mb-3">
+                    <input
+                        type="text"
+                        class="use-keyboard-input peer m-0 block h-min w-full rounded border border-solid border-neutral-300 bg-white bg-clip-padding py-3 px-3 text-base font-normal leading-tight text-neutral-700 ease-in-out placeholder:text-transparent focus:border-primary focus:bg-white focus:text-neutral-700 focus:shadow-te-primary focus:outline-none"
+                        id="apellido_input"
+                        placeholder="Apellido" />
+                    <label
+                        for="apellido_input"
+                        class="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-focus:bg-white peer-[:not(:placeholder-shown)]:bg-white peer-[:not(:placeholder-shown)]:-translate-y-[1.15rem] peer-[:not(:placeholder-shown)]:scale-[0.8]"
+                        >Apellido</label
+                    >
+                    </div>
+                    <!-- e-mail -->
+                    <div class="relative mb-3">
+                    <input
+                        type="email"
+                        class="use-keyboard-input peer m-0 block h-min w-full rounded border border-solid border-neutral-300 bg-white bg-clip-padding py-3 px-3 text-base font-normal leading-tight text-neutral-700 ease-in-out placeholder:text-transparent focus:border-primary focus:bg-white focus:text-neutral-700 focus:shadow-te-primary focus:outline-none"
+                        id="email_input"
+                        placeholder="e-mail" />
+                    <label
+                        for="email_input"
+                        class="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-focus:bg-white peer-[:not(:placeholder-shown)]:bg-white peer-[:not(:placeholder-shown)]:-translate-y-[1.15rem] peer-[:not(:placeholder-shown)]:scale-[0.8]"
+                        >e-mail</label
+                    >
+                    </div>
+          
+                    <div class="text-center">
+                      <button
+                        type="button"
+                        class="inline-block rounded-full bg-primary px-7 pt-3 pb-2.5 text-sm font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]"
+                        id="registro_btn"
+                        data-te-ripple-init
+                        data-te-ripple-color="light">
+                        Registrate
+                      </button>
+                    </div>
+                </form><!-- fin formulario -->
+                <div class="w-1/3 m-3">
+                    <img
+                    src="images/Authentication.svg"
+                    class="h-full"
+                    alt="Phone image" />
+                </div>
+                
+            </div>
+
+        </div><!-- fin pagina -->
+
+    </div><!-- fin contenido -->
+
+    <script src="./js/register_controller.js"></script>
+    
+</body>
+</html>
