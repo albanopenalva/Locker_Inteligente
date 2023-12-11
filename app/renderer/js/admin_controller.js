@@ -111,12 +111,15 @@ const success_alert_txt = document.querySelector('#success_alert_txt');
 const error_alert_txt = document.querySelector('#error_alert_txt');
 const warning_alert = document.querySelector('#warning_alert');
 const warning_alert_txt = document.querySelector('#warning_alert_txt');
+const info_alert = document.querySelector('#info_alert');
+const info_alert_txt = document.querySelector('#info_alert_txt');
 
 //configure logger
 const context = {context: "admin.js"};
 
 //send to main
 function toIndex(){
+    endRegCard();
     ipcRenderer.send('page:index', null);
     cabinet.classList.add("slide-down");
     info_locker.classList.add("slide-down");
@@ -240,18 +243,22 @@ function toStats(){
 
 //
 function startRegCard(){
+    info_alert.classList.add("hidden");
+    info_alert.classList.remove("rotate-horizontal-center");
     success_alert.classList.add("hidden");
     error_alert.classList.add("hidden");
     success_alert.classList.remove("rotate-horizontal-center");
     error_alert.classList.remove("rotate-horizontal-center");
-    success_alert_txt.innerText = `Acercar Tarjeta`;
-    success_alert.classList.remove("hidden");
-    success_alert.classList.add("rotate-horizontal-center");
+    info_alert_txt.innerText = `Acercar Tarjeta`;
+    info_alert.classList.remove("hidden");
+    info_alert.classList.add("rotate-horizontal-center");
     ipcRenderer.send('admin:readcard', true);
 }
 
 //
 function endRegCard(){
+    info_alert.classList.add("hidden");
+    info_alert.classList.remove("rotate-horizontal-center");
     success_alert.classList.add("hidden");
     success_alert.classList.remove("rotate-horizontal-center");
     error_alert.classList.add("hidden");
