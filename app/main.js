@@ -39,7 +39,7 @@ function createMainWindow(){
       height: 800,
       //icon: `${__dirname}/assets/icons/Icon_256x256.png`,
       resizable: true,
-      //fullscreen: true,
+      fullscreen: true,
       webPreferences: {
         nodeIntegration: true,
         contextIsolation: true,

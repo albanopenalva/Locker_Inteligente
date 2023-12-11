@@ -4,7 +4,7 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "start": ".\\node_modules\\electron\\dist\\electron.exe ."
+    "start": "DISPLAY=\"${DISPLAY:=:0}\" electron ."
   },
   "author": "Albano Peñalva",
   "license": "ISC",
