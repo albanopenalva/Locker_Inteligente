@@ -19,7 +19,7 @@ const pkgDefsUsers = protoLoader.loadSync(PROTO_USERS, options);
 const UsersService = grpc.loadPackageDefinition(pkgDefsUsers).users.USERS;
 //create clients
 const clientUsers = new UsersService(
-    "192.168.30.127:50052",
+    "localhost:50052",
     grpc.credentials.createInsecure()
 );
 

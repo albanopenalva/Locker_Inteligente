@@ -19,7 +19,7 @@ const pkgDefsLocker = protoLoader.loadSync(PROTO_LOCKER, options);
 const LockerService = grpc.loadPackageDefinition(pkgDefsLocker).locker.LOCKER;
 //create clients
 const clientLocker = new LockerService(
-    "192.168.30.127:50051",
+    "localhost:50051",
     grpc.credentials.createInsecure()
 );
 

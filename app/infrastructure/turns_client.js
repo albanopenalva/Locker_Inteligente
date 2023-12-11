@@ -19,7 +19,7 @@ const pkgDefsTurns = protoLoader.loadSync(PROTO_TURNS, options);
 const TurnsService = grpc.loadPackageDefinition(pkgDefsTurns).turns.TURNS;
 //create clients
 const clientTurns = new TurnsService(
-    "192.168.30.127:50053",
+    "localhost:50053",
     grpc.credentials.createInsecure()
 );
 
