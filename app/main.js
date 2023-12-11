@@ -140,7 +140,10 @@ async function checkCard() {
 //register user
 ipcMain.on('user:register', (e, data) => {
     log.info(`Registrando usuario`);
-    if(registerUser(mainWindow, user, data)){
+    register(data);
+});
+async function register(userdata){
+    if(await registerUser(mainWindow, user, userdata)){
         //change to locker selection page
         setTimeout(function () {
             //start session end timer
@@ -150,8 +153,8 @@ ipcMain.on('user:register', (e, data) => {
             }, session_end_period);
             loadSelection(mainWindow, user);
         }, 2000); 
-    }    
-});
+    }
+}
 
 //select locker page--------------------------------------------------------------
 //user select a locker
